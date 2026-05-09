@@ -440,15 +440,41 @@
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  function closeProject() {
+  function closeProject(scrollTo) {
     document.querySelectorAll('.project-detail').forEach(d => d.classList.remove('active'));
     homeSections.forEach(s => s.classList.remove('hidden'));
     heroSection.style.display = '';
     servicesSection.style.display = '';
     contactSection.style.display = '';
     footerEl.style.display = '';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      if (scrollTo) {
+        const target = document.querySelector(scrollTo);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 50);
   }
+
+  // Make nav links work from inside a project
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const isDetailOpen = document.querySelector('.project-detail.active');
+      if (isDetailOpen) {
+        e.preventDefault();
+        const target = this.getAttribute('href');
+        closeProject(target);
+      }
+    });
+  });
+
+  // Make nav logo go back to top
+  document.querySelector('.nav-logo').addEventListener('click', function() {
+    const isDetailOpen = document.querySelector('.project-detail.active');
+    if (isDetailOpen) closeProject();
+    else window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 </script>
 
 </body>
