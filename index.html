@@ -155,7 +155,7 @@
     .hero { padding-bottom: 4rem; }
     .services-grid { gap: 0; }
     .service-item { border-right: none !important; padding-right: 0 !important; }
-    .gallery.cols-3 { grid-template-columns: 1fr 1fr; }
+    .gallery.cols-3 { grid-template-columns: repeat(3, 1fr); }
     .gallery.mixed  { grid-template-columns: 1fr 1fr; }
     .gitem.span-5, .gitem.span-7, .gitem.span-4, .gitem.span-8, .gitem.span-6 { grid-column: span 1; }
     .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
@@ -164,8 +164,9 @@
     footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
   }
   @media (max-width: 500px) {
-    .gallery.cols-3, .gallery.cols-2 { grid-template-columns: 1fr; }
-  }
+  .gallery.cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .gallery.cols-2 { grid-template-columns: 1fr 1fr; }
+}
  /* ── PROJECT CARDS (Home) ── */
 .projects-grid { 
   display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
@@ -309,20 +310,17 @@
     <h1>Ttechcoins</h1>
     <p class="detail-desc">A series of social media graphics for a Nigerian fintech brand specialising in digital asset exchange — giftcards, crypto, and instant Naira payouts. Work spans promotional ads, seasonal greetings, and brand awareness campaigns.</p>
   </div>
-  <div class="gitem" style="grid-column: 1 / -1"><img src="FAST__SAFE__RELIABLE.png" alt="" /></div>
-  </div>
-  <div class="gallery cols-3" style="margin-bottom:0.6rem">
-    <div class="gitem"><img src="CARD_TO_NAIRA.png" alt="Giftcard to Naira" /></div>
-    <div class="gitem"><img src="COIN_TO_NAIRA.png" alt="Coin to Naira" /></div>
-    <div class="gitem"><img src="DIGITAL_ASSET_TO_CASH.png" alt="Digital Asset to Cash" /></div>
-  </div>
-  <div class="gallery mixed" style="margin-bottom:0.6rem">
-    <div class="gitem span-5"><img src="BEST_RATE_INSTANT_PAY.png" alt="Best Rates Instant Pay" /></div>
-    <div class="gitem span-7"><img src="SPEED_MATTERS.png" alt="Speed Matters" /></div>
-  </div>
-  <div class="gallery cols-2"style="margin-bottom:0.6rem">
-    <div class="gitem"><img src="EASTER_DAY.png" alt="Happy Easter" /></div>
-    <div class="gitem"><img src="TTech_EID_26.png" alt="Eid Al Fitr Mubarak" /></div>
+  <div class="gallery cols-3">
+  <div class="gitem"><img src="FAST__SAFE__RELIABLE.png" alt="Fast Safe Reliable" /></div>
+  <div class="gitem"><img src="BEST_RATE_INSTANT_PAY.png" alt="Best Rates Instant Pay" /></div>
+  <div class="gitem"><img src="MORE_VALUE.png" alt="More Value" /></div>
+  <div class="gitem"><img src="CARD_TO_NAIRA.png" alt="Giftcard to Naira" /></div>
+  <div class="gitem"><img src="COIN_TO_NAIRA.png" alt="Coin to Naira" /></div>
+  <div class="gitem"><img src="DIGITAL_ASSET_TO_CASH.png" alt="Digital Asset to Cash" /></div>
+  <div class="gitem"><img src="SPEED_MATTERS.png" alt="Speed Matters" /></div>
+  <div class="gitem"><img src="EASTER_DAY.png" alt="Happy Easter" /></div>
+  <div class="gitem"><img src="TTech_EID_26.png" alt="Eid Al Fitr Mubarak" /></div>
+</div>
   </div>
 </section>
 
@@ -334,19 +332,15 @@
     <h1>RTech</h1>
     <p class="detail-desc">Social media content for RTech — a fintech brand under the tagline "No More Limit." The work covers educational crypto content, engagement posts, seasonal graphics, and brand motivation campaigns, all carried in a bold blue and yellow visual language.</p>
   </div>
-  <div class="gallery mixed" style="margin-bottom:0.6rem">
-    <div class="gitem span-7"><img src="PUSH_LIMITS.png" alt="Push Your Limits" /></div>
-    <div class="gitem span-5"><img src="DO_GIFTCARDS_EXPIRE.png" alt="Do Giftcards Expire?" /></div>
-  </div>
-  <div class="gallery cols-3" style="margin-bottom:0.6rem">
-    <div class="gitem"><img src="CRYPTO_GAS_FEE.png" alt="Crypto 101 — Gas Fee" /></div>
-    <div class="gitem"><img src="FIRST_BUY_AFTER_SALARY.png" alt="First Buy After Salary" /></div>
-    <div class="gitem"><img src="FIRST_GIFTCARD_EVER.png" alt="First Giftcard Ever Quiz" /></div>
-  </div>
-  <div class="gallery cols-2">
-    <div class="gitem"><img src="New_Month_May.png" alt="Happy New Month May" /></div>
-    <div class="gitem"><img src="EASTER_FLYER.png" alt="Happy Easter" /></div>
-  </div>
+  <div class="gallery cols-3">
+  <div class="gitem"><img src="PUSH_LIMITS.png" alt="Push Your Limits" /></div>
+  <div class="gitem"><img src="DO_GIFTCARDS_EXPIRE.png" alt="Do Giftcards Expire?" /></div>
+  <div class="gitem"><img src="CRYPTO_GAS_FEE.png" alt="Crypto 101 — Gas Fee" /></div>
+  <div class="gitem"><img src="FIRST_BUY_AFTER_SALARY.png" alt="First Buy After Salary" /></div>
+  <div class="gitem"><img src="FIRST_GIFTCARD_EVER.png" alt="First Giftcard Ever Quiz" /></div>
+  <div class="gitem"><img src="New_Month_May.png" alt="Happy New Month May" /></div>
+  <div class="gitem"><img src="EASTER_FLYER.png" alt="Happy Easter" /></div>
+</div>
 
   <!--
   ADD MORE PROJECTS HERE:
