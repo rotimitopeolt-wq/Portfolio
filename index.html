@@ -164,10 +164,16 @@
     .project-meta { flex-wrap: wrap; }
     .projects-grid { grid-template-columns: repeat(2, 1fr) !important; }
     .project-type { margin-left: 0; }
+    .project-card-info { padding: 0.75rem 1rem; }
+    .project-card-info h3 { font-size: 0.85rem; }
+    .project-card-info p { font-size: 0.6rem; letter-spacing: 0.1em; }
     footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
   }
   @media (max-width: 500px) {
   .projects-grid { grid-template-columns: repeat(2, 1fr) !important; }
+   .project-card-info { padding: 0.6rem 0.75rem; }
+   .project-card-info h3 { font-size: 0.75rem; }
+   .project-card-info p { font-size: 0.55rem; letter-spacing: 0.08em; }
   .gallery.cols-3 { grid-template-columns: repeat(3, 1fr); }
   .gallery.cols-2 { grid-template-columns: 1fr 1fr; }
 }
