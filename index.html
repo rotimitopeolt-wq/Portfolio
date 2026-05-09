@@ -9,13 +9,13 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --bg:       #0D1117;
-    --surface:  #161D2F;
-    --surface2: #1E2A45;
-    --ink:      #EDF0F7;
-    --muted:    #7B8DB0;
-    --border:   rgba(237,240,247,0.08);
-    --border2:  rgba(237,240,247,0.14);
+    --bg:       #0B0F1A;
+    --surface:  #111827;
+    --surface2: #1A2236;
+    --ink:      #E8EDF5;
+    --muted:    #8B9DBF;
+    --border:   rgba(232,237,245,0.08);
+    --border2:  rgba(232,237,245,0.14);
     --accent:   #C8A96E;
   }
   html { scroll-behavior: smooth; }
@@ -175,8 +175,12 @@
   gap: 1.5rem; margin-top: 3rem; 
 }
 .project-card { 
-  background: var(--surface); border: 0.5px solid var(--border); 
-  cursor: pointer; overflow: hidden; transition: border-color 0.3s;
+  background: var(--surface2); border: 0.5px solid var(--border2); 
+  cursor: pointer; overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+.project-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 .project-card:hover { border-color: var(--accent); }
 .project-card-thumb { 
