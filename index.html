@@ -162,10 +162,12 @@
     .gitem.span-5, .gitem.span-7, .gitem.span-4, .gitem.span-8, .gitem.span-6 { grid-column: span 1; }
     .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
     .project-meta { flex-wrap: wrap; }
+    .projects-grid { grid-template-columns: repeat(2, 1fr); }
     .project-type { margin-left: 0; }
     footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
   }
   @media (max-width: 500px) {
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
   .gallery.cols-3 { grid-template-columns: repeat(3, 1fr); }
   .gallery.cols-2 { grid-template-columns: 1fr 1fr; }
 }
