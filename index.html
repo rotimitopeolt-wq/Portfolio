@@ -498,12 +498,14 @@
     const lbImg = document.getElementById('lightboxImg');
     lbImg.src = src;
     lbImg.alt = alt || '';
-    lb.classList.add('open');
+    lb.style.display = 'flex';
     document.body.style.overflow = 'hidden';
   }
 
   function closeLightbox() {
-    document.getElementById('lightbox').classList.remove('open');
+    const lb = document.getElementById('lightbox');
+    lb.style.display = 'none';
+    document.getElementById('lightboxImg').src = '';
     document.body.style.overflow = '';
   }
 
@@ -530,15 +532,15 @@
 <div id="lightbox" style="
   display:none; position:fixed; inset:0; z-index:999;
   background:rgba(0,0,0,0.92); align-items:center; 
-  justify-content:center; padding:1.5rem;">
+  justify-content:center; padding:1.5rem; cursor:zoom-out;">
   <button onclick="closeLightbox()" style="
     position:fixed; top:1.25rem; right:1.5rem;
-    background:transparent; border:none; color:#888;
+    background:transparent; border:none; color:#fff;
     font-size:1.8rem; cursor:pointer; font-family:'DM Sans',sans-serif;
     line-height:1; z-index:1000;">✕</button>
   <img id="lightboxImg" src="" alt="" style="
     max-width:100%; max-height:90vh; 
-    object-fit:contain; display:block;" />
+    object-fit:contain; display:block; cursor:default;" />
 </div>
 </body>
 </html>
