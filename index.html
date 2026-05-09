@@ -492,7 +492,53 @@
     if (isDetailOpen) closeProject();
     else window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-</script>
+  // Lightbox for project images
+  function openLightbox(src, alt) {
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lightboxImg');
+    lbImg.src = src;
+    lbImg.alt = alt || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
 
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Make all gallery images clickable
+  document.querySelectorAll('.project-detail .gitem img').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', function() {
+      openLightbox(this.src, this.alt);
+    });
+  });
+
+  // Close on background click
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this || e.target === document.getElementById('lightboxImg')) {
+      closeLightbox();
+    }
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
+<div id="lightbox" style="
+  display:none; position:fixed; inset:0; z-index:999;
+  background:rgba(0,0,0,0.92); align-items:center; 
+  justify-content:center; padding:1.5rem;">
+  <button onclick="closeLightbox()" style="
+    position:fixed; top:1.25rem; right:1.5rem;
+    background:transparent; border:none; color:#888;
+    font-size:1.8rem; cursor:pointer; font-family:'DM Sans',sans-serif;
+    line-height:1; z-index:1000;">✕</button>
+  <img id="lightboxImg" src="" alt="" style="
+    max-width:100%; max-height:90vh; 
+    object-fit:contain; display:block;" />
+</div>
 </body>
 </html>
